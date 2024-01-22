@@ -1,0 +1,16 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label for="username">Username</label>
+  <input type="text" formControlName="username" id="username" required />
+
+  <label for="password">Password</label>
+  <input type="password" formControlName="password" id="password" required />
+
+  <div class="error" *ngIf="userForm.invalid">
+    Please fill in all required fields.
+  </div>
+
+  <button type="submit">Submit</button>
+  <div class="error">
+    {{ error }}
+  </div>
+</form>

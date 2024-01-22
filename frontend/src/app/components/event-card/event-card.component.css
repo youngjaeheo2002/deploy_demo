@@ -1,0 +1,19 @@
+.event-card {
+  position: relative;
+  min-height: 80px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}

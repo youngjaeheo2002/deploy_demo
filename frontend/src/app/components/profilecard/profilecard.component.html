@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-content">
+    <h3>Name: {{ user.firstName }} {{ user.lastName }}</h3>
+    <h3>Username: {{ user.username }}</h3>
+
+    <button routerLink="/profile" [queryParams]="{ userId: this.user._id }">
+      Visit
+    </button>
+  </div>
+</div>

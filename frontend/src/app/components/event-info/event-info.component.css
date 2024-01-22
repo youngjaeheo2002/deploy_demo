@@ -1,0 +1,46 @@
+.event-info-card {
+  margin: 0px 20px;
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.event-info-card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.row {
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.row-spacing {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+label::after {
+  content: ":";
+}
+
+.field {
+  margin-right: 20px;
+}
+
+button {
+  margin-top: 0px;
+  padding: 4px;
+}
+
+.users {
+  padding: 5px;
+  background-color: lightcoral;
+  border: 1px solid var(--color-base);
+}

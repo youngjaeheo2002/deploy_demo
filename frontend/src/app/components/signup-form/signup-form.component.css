@@ -1,0 +1,47 @@
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateY(10deg);
+  transition: transform 0.3s;
+}
+
+form:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input,
+select {
+  border: none; /* Remove the default border */
+  border-bottom: 1px solid var(--color-base); /* Add a dark bottom border */
+  background-color: transparent; /* Make the background transparent */
+  padding: 5px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+select {
+  /* Customize select dropdown appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><polygon fill='black' points='0,0 10,0 5,6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+button {
+  width: 100%;
+}
+
+div.error {
+  margin-top: 10px;
+  color: red;
+}

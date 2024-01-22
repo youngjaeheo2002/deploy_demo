@@ -1,0 +1,5 @@
+<app-event-info *ngIf="user" [event]="event" [user]="user"></app-event-info>
+<app-chat-room
+  *ngIf="api.loggedIn && event?._id"
+  [roomId]="event._id"
+></app-chat-room>

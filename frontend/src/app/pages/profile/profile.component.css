@@ -1,0 +1,72 @@
+a {
+  margin-left: 20px;
+}
+
+.profile-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-box {
+  width: 80%;
+  max-width: 600px;
+}
+
+.profile-form {
+  width: 60%;
+  max-width: 400px;
+}
+
+.profile-box h2 {
+  text-align: left;
+}
+
+label[for="lastName"],
+label[for="firstName"] {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.profile-details {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.profile-details p {
+  margin: 5px 0;
+}
+
+.red {
+  background-color: red;
+}
+.profile-form .form-group {
+  margin-bottom: 10px;
+}
+
+.profile-details .interests {
+  margin-top: 10px;
+}
+
+.profile-details .interests ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.row {
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.error {
+  margin-top: 10px;
+  color: red;
+}

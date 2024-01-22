@@ -1,0 +1,55 @@
+<form
+  [formGroup]="paymentForm"
+  (ngSubmit)="processPayment()"
+  class="payment-form"
+>
+  <div class="form-group">
+    <label for="cardName">Cardholder Name</label>
+    <input
+      type="text"
+      id="cardName"
+      formControlName="cardName"
+      class="form-control"
+      placeholder="Cardholder Name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="cardNumber">Card Number</label>
+    <input
+      type="text"
+      id="cardNumber"
+      formControlName="cardNumber"
+      class="form-control"
+      placeholder="cardnumber"
+    />
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 form-group">
+      <label for="cardExpiry">Expiration Date</label>
+      <input
+        type="text"
+        id="cardExpiry"
+        formControlName="cardExpiry"
+        class="form-control"
+        placeholder="MM/YY"
+      />
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="cardCvc">CVC</label>
+      <input
+        type="text"
+        id="cardCvc"
+        formControlName="cardCvc"
+        class="form-control"
+        placeholder="CVC"
+      />
+    </div>
+  </div>
+  <button
+    type="submit"
+    [disabled]="paymentForm.invalid"
+    class="btn btn-primary btn-block"
+  >
+    Pay Now
+  </button>
+</form>

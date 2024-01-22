@@ -1,0 +1,25 @@
+.message-list {
+  min-height: 300px;
+  height: 35vh;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 15px;
+}
+
+.sender {
+  font-weight: bold;
+}
+
+.message-list small {
+  font-style: italic;
+}
+
+.report-on-hover {
+  display: none;
+}
+
+.message:hover .report-on-hover {
+  display: block;
+}

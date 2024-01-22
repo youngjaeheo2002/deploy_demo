@@ -1,0 +1,45 @@
+<div class="button-bar">
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Search..."
+      class="search-bar"
+    />
+  </div>
+  <button class="search-btn" (click)="getEventsByName()">Search</button>
+  <button class="clear-btn" (click)="clearSearch()"></button>
+  <button
+    class="filter-button"
+    [ngClass]="{ 'filter-selected': showFilterForm }"
+    (click)="showFilterForm = !showFilterForm"
+  >
+    Filter <fa-icon id="filter-icon" icon="sliders" size="1x"></fa-icon>
+  </button>
+  <button [ngClass]="{ selected: allEvents }" (click)="getAllEvents()">
+    All Events
+  </button>
+  <button [ngClass]="{ selected: !allEvents }" (click)="getMyEvents()">
+    My Events
+  </button>
+</div>
+
+<div class="row event-body">
+  <div class="col-10 col-sm-12">
+    <div class="filter-form">
+      <app-event-filter-form
+        *ngIf="showFilterForm"
+        (filter)="filterEvents($event)"
+      ></app-event-filter-form>
+    </div>
+    <div class="large-event-container" *ngIf="largeEvent">
+      <app-large-event-card [event]="largeEvent"></app-large-event-card>
+    </div>
+
+    <div class="small-card-list">
+      <div *ngFor="let event of events" class="event-card">
+        <app-event-card [event]="event"></app-event-card>
+      </div>
+    </div>
+  </div>
+</div>

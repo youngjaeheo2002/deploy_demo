@@ -1,0 +1,16 @@
+<div class="chat-room">
+  <h2>Chat Room</h2>
+
+  <div class="messages">
+    <app-message-list [messages]="messages"></app-message-list>
+  </div>
+
+  <div class="input-area row" (keydown.enter)="sendMessage()">
+    <textarea
+      [(ngModel)]="messageText"
+      rows="1"
+      placeholder="Type your message"
+    ></textarea>
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>

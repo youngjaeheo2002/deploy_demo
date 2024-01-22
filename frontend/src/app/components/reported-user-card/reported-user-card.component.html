@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">
+    User ID: {{ user._id }} Name: {{ user.firstName }} {{ user.lastName }}
+
+    <button (click)="banUser()">Ban</button>
+    <button (click)="resolveUser()">Resolve</button>
+  </div>
+
+  <div class="card-body">
+    <button (click)="toggleReports()">Toggle Reports</button>
+    <ul *ngIf="showReports">
+      <li *ngFor="let report of user.userReports">
+        <div>createdAt:{{ report.createdAt }}</div>
+        <div>reporterId:{{ report.reporterId }}</div>
+        <div>description:{{ report.reportMsg }}</div>
+        <div *ngIf="report.messageText">message:{{ report.messageText }}</div>
+        <hr />
+      </li>
+    </ul>
+  </div>
+</div>

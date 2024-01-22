@@ -1,0 +1,22 @@
+<form [formGroup]="filterForm">
+  <label for="filterDateMin">Min Date</label>
+  <input
+    type="datetime-local"
+    formControlName="filterDateMin"
+    id="filterDateMin"
+    min="2000-01-01T00:00"
+  />
+
+  <label for="filterDateMax">Max Date</label>
+  <input
+    type="datetime-local"
+    formControlName="filterDateMax"
+    id="filterDateMax"
+    min="2000-01-01T00:00"
+  />
+
+  <label for="filterLocation">Location</label>
+  <input type="text" formControlName="filterLocation" id="filterLocation" />
+
+  <button type="submit" (click)="onFilter()">Filter</button>
+</form>

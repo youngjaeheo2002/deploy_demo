@@ -1,0 +1,45 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label for="username">Username</label>
+  <input type="text" formControlName="username" id="username" required />
+  <div
+    *ngIf="
+      userForm.controls['username'].touched &&
+      userForm.controls['username'].errors?.pattern
+    "
+    class="error"
+  >
+    Username must contain only letters and numbers.
+  </div>
+  <div *ngIf="usernameTaken" class="error">Username already taken</div>
+
+  <label for="firstName">First Name</label>
+  <input type="text" formControlName="firstName" id="firstName" required />
+
+  <label for="lastName">Last Name</label>
+  <input type="text" formControlName="lastName" id="lastName" required />
+
+  <label for="type">Type</label>
+  <select formControlName="type" id="type" required>
+    <option value="Basic">Basic</option>
+    <option value="Premium">Premium</option>
+  </select>
+
+  <label for="password">Password</label>
+  <input type="password" formControlName="password" id="password" required />
+  <div
+    *ngIf="
+      userForm.controls['password'].touched &&
+      userForm.controls['password'].errors?.pattern
+    "
+    class="error"
+  >
+    Password must contain at least 8 characters, including one uppercase letter,
+    one lowercase letter, one digit, and one special character.
+  </div>
+
+  <div class="error" *ngIf="userForm.invalid">
+    Please fill in all required fields.
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,10 @@
+<form class="row" (ngSubmit)="submitReport()">
+  <textarea
+    id="message"
+    name="message"
+    [(ngModel)]="messageTxt"
+    required
+    placeholder="tell us why you're reporting this user"
+  ></textarea>
+  <button type="submit">Submit Report</button>
+</form>

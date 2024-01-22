@@ -1,0 +1,37 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <label for="eventName">Event Name</label>
+  <input type="text" formControlName="eventName" id="eventName" required />
+
+  <label for="eventDescription">Description</label>
+  <textarea
+    formControlName="eventDescription"
+    id="eventDescription"
+    required
+  ></textarea>
+
+  <label for="eventDate">Date</label>
+  <input
+    type="datetime-local"
+    formControlName="eventDate"
+    id="eventDate"
+    min="2000-01-01T00:00"
+    required
+  />
+
+  <label for="eventLocation">Location</label>
+  <input
+    type="text"
+    formControlName="eventLocation"
+    id="eventLocation"
+    required
+  />
+
+  <div class="error" *ngIf="eventForm.invalid">
+    Please fill in all required fields.
+  </div>
+
+  <button type="submit">Submit</button>
+  <div class="error">
+    {{ error }}
+  </div>
+</form>

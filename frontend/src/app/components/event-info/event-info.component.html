@@ -1,0 +1,23 @@
+<div class="event-info-card">
+  <h2 class="row-spacing">{{ event.eventName }}</h2>
+  <div class="row">
+    <label>Date</label>
+    <div class="field">{{ event.eventDate }}</div>
+    <label>Location</label>
+    <div class="field">{{ event.eventLocation }}</div>
+  </div>
+  <div class="row">
+    <label>Owner</label>
+    <div class="field">{{ user.username }}</div>
+  </div>
+  <label>Description</label>
+  <div class="field row-spacing">{{ event.eventDescription }}</div>
+  <div class="row">
+    <label>Interested Users</label>
+    <div class="field users" *ngFor="let username of userInterestedUsernames">
+      {{ username }}
+    </div>
+  </div>
+  <button *ngIf="!userJoined" (click)="joinEvent()">Join</button>
+  <button *ngIf="userJoined" (click)="leaveEvent()">Leave</button>
+</div>

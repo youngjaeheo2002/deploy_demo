@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Reports and Banned Users</h2>
+
+  <!-- Toggle buttons using labels -->
+  <label
+    (click)="toggleView('reports')"
+    [class.active]="activeView === 'reports'"
+    >View Reports</label
+  >
+  <label
+    (click)="toggleView('bannedUsers')"
+    [class.active]="activeView === 'bannedUsers'"
+    >View Banned Users</label
+  >
+
+  <div class="content">
+    <!-- Show reports when activeView is 'reports' -->
+    <div *ngIf="activeView === 'reports'">
+      <!-- Display your reports here -->
+      <div *ngFor="let report of reports">
+        <app-reported-user-card
+          [user]="report"
+          (banUserEvent)="fetchReports()"
+        ></app-reported-user-card>
+      </div>
+    </div>
+
+    <!-- Show banned users when activeView is 'bannedUsers' -->
+    <div *ngIf="activeView === 'bannedUsers'">
+      <!-- Display your banned users here -->
+      <div *ngFor="let user of bannedUsers">
+        <app-banned-user-card
+          [user]="user"
+          (update)="fetchBannedUsers()"
+        ></app-banned-user-card>
+      </div>
+    </div>
+  </div>
+</div>

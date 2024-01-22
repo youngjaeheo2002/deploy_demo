@@ -1,0 +1,6 @@
+<div class="user-card">
+  <div><strong>User ID:</strong> {{ user._id }}</div>
+  <div><strong>Name:</strong> {{ user.firstName }} {{ user.lastName }}</div>
+  <div><strong>Banned Date:</strong> {{ user.bannedDate | date }}</div>
+  <button (click)="unbanUser()">Unban</button>
+</div>

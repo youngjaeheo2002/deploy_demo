@@ -1,0 +1,77 @@
+<a *ngIf="api.type === 'Basic'" routerLink="/premium-signup"
+  >Switch to Premium</a
+>
+<a *ngIf="api.type === 'Premium'" routerLink="/">Switch to Basic</a>
+
+<div *ngIf="!editMode" class="profile-container">
+  <!-- Display profile information -->
+  <div class="profile-box">
+    <h2>{{ user.username }}</h2>
+    <div class="profile-details">
+      <p><strong>First Name:</strong> {{ user.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ user.lastName }}</p>
+      <div class="interests">
+        <strong>Interests:</strong>
+        <ul>
+          <li *ngFor="let interest of user.interests">{{ interest }}</li>
+        </ul>
+      </div>
+    </div>
+    <button *ngIf="myself" (click)="toggleEditMode()">Edit</button>
+    <button *ngIf="!myself" (click)="blockUser()" class="red">
+      Block User
+    </button>
+    <app-profile-report-form
+      [user]="user"
+      *ngIf="!myself"
+    ></app-profile-report-form>
+  </div>
+</div>
+
+<div *ngIf="editMode" class="profile-container">
+  <!-- Display editable form -->
+  <div class="profile-box profile-form">
+    <form (submit)="saveChanges()">
+      <h2>Editing Profile</h2>
+      <div class="profile-details">
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="{{ user.firstName }}"
+            [(ngModel)]="firstName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="{{ user.lastName }}"
+            [(ngModel)]="lastName"
+            required
+          />
+        </div>
+        <div *ngFor="let interest of interestsEnum">
+          <label>
+            <input
+              type="checkbox"
+              [name]="interest.name"
+              [(ngModel)]="interest.selected"
+            />
+            {{ interest.name }}
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <button type="submit">Save</button>
+        <button (click)="toggleEditMode()">Cancel</button>
+      </div>
+      <div class="error">{{ error }}</div>
+    </form>
+  </div>
+</div>

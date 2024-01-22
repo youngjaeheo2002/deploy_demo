@@ -1,0 +1,88 @@
+{
+  "info": {
+    "_postman_id": "your_collection_id",
+    "name": "Your API Collection",
+    "description": "A collection of API requests for testing.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "signup test user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"username\": \"test1\", \"password\": \"Test1@Test1@\", \"firstName\": \"Test\", \"lastName\": \"Test\", \"type\":\"Basic\" }"
+        },
+        "url": {
+          "raw": "http://143.110.208.50:3000/api/users/signup",
+          "protocol": "http",
+          "host": ["143.110.208.50"],
+          "port": "3000",
+          "path": ["api", "users", "signup"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login test user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"test1\",\"password\": \"Test1@Test1@\"}"
+        },
+        "url": {
+          "raw": "http://143.110.208.50:3000/api/users/login",
+          "protocol": "http",
+          "host": ["143.110.208.50"],
+          "port": "3000",
+          "path": ["api", "users", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Request to Logout Endpoint",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://143.110.208.50:3000/api/users/logout",
+          "protocol": "http",
+          "host": ["143.110.208.50"],
+          "port": "3000",
+          "path": ["api", "users", "logout"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE Request to Delete User by Username",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://143.110.208.50:3000/api/users/username=test1",
+          "protocol": "http",
+          "host": ["143.110.208.50"],
+          "port": "3000",
+          "path": ["api", "users", "username=test1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
